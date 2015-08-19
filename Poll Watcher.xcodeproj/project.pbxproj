@@ -15,6 +15,7 @@
 		305A41371B83FE0C00A3D620 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 305A41351B83FE0C00A3D620 /* LaunchScreen.storyboard */; };
 		305A41421B83FE0C00A3D620 /* Poll_WatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305A41411B83FE0C00A3D620 /* Poll_WatcherTests.swift */; };
 		305A414D1B83FE0C00A3D620 /* Poll_WatcherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305A414C1B83FE0C00A3D620 /* Poll_WatcherUITests.swift */; };
+		305A415B1B84038600A3D620 /* PollRetrieval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305A415A1B84038600A3D620 /* PollRetrieval.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		305A41481B83FE0C00A3D620 /* Poll WatcherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Poll WatcherUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		305A414C1B83FE0C00A3D620 /* Poll_WatcherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poll_WatcherUITests.swift; sourceTree = "<group>"; };
 		305A414E1B83FE0C00A3D620 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		305A415A1B84038600A3D620 /* PollRetrieval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollRetrieval.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				305A41291B83FE0C00A3D620 /* AppDelegate.swift */,
 				305A412B1B83FE0C00A3D620 /* ViewController.swift */,
+				305A415A1B84038600A3D620 /* PollRetrieval.swift */,
 				305A412D1B83FE0C00A3D620 /* Main.storyboard */,
 				305A41331B83FE0C00A3D620 /* Assets.xcassets */,
 				305A41351B83FE0C00A3D620 /* LaunchScreen.storyboard */,
@@ -261,6 +264,7 @@
 				305A41321B83FE0C00A3D620 /* Poll_Watcher.xcdatamodeld in Sources */,
 				305A412C1B83FE0C00A3D620 /* ViewController.swift in Sources */,
 				305A412A1B83FE0C00A3D620 /* AppDelegate.swift in Sources */,
+				305A415B1B84038600A3D620 /* PollRetrieval.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +407,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Poll Watcher/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.scottcaruso.Poll-Watcher";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -414,6 +419,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Poll Watcher/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.scottcaruso.Poll-Watcher";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -487,6 +493,7 @@
 				305A41531B83FE0C00A3D620 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		305A41541B83FE0C00A3D620 /* Build configuration list for PBXNativeTarget "Poll WatcherTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +502,7 @@
 				305A41561B83FE0C00A3D620 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		305A41571B83FE0C00A3D620 /* Build configuration list for PBXNativeTarget "Poll WatcherUITests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +511,7 @@
 				305A41591B83FE0C00A3D620 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

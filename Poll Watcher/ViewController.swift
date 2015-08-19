@@ -9,8 +9,16 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var gopLeaderData: (String,Double) = ("",0)
+    var completeTimer: NSTimer?
+    var polRetrieval: PollRetrieval?
 
     override func viewDidLoad() {
+        
+        polRetrieval = PollRetrieval()
+        completeTimer = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: "checkForUpdate:", userInfo: nil, repeats: true)
+
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -19,7 +27,19 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    func checkForUpdate(timer: NSTimer)
+    {
+        if (gopLeaderData.0 == "" || gopLeaderData.1 == 0)
+        {
+            gopLeaderData = polRetrieval!.getLatestGopResults()
+            print("Nothing yet")
+        } else
+        {
+            print(gopLeaderData)
+            timer.invalidate()
+        }
+    }
 
 }
 
