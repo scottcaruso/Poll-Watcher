@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     var gopLeaderData: (String,Double) = ("",0)
+    var demLeaderData: (String,Double) = ("",0)
     var completeTimer: NSTimer?
     var polRetrieval: PollRetrieval?
 
@@ -30,13 +31,15 @@ class ViewController: UIViewController {
     
     func checkForUpdate(timer: NSTimer)
     {
-        if (gopLeaderData.0 == "" || gopLeaderData.1 == 0)
+        if (gopLeaderData.0 == "" || gopLeaderData.1 == 0 || demLeaderData.0 == "" || demLeaderData.1 == 0)
         {
             gopLeaderData = polRetrieval!.getLatestGopResults()
+            demLeaderData = polRetrieval!.getLatestDemResults()
             print("Nothing yet")
         } else
         {
             print(gopLeaderData)
+            print(demLeaderData)
             timer.invalidate()
         }
     }
