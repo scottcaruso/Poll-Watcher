@@ -10,19 +10,19 @@ import Foundation
 
 class PollRetrieval {
     
-    let gopURL = NSURL(string:"http://elections.huffingtonpost.com/pollster/api/charts/2016-national-gop-primary")
-    let demURL = NSURL(string:"http://elections.huffingtonpost.com/pollster/api/charts/2016-national-democratic-primary")
+    let gopURL = NSURL(string:"http://elections.huffingtonpost.com/pollster/api/charts/2016-national-gop-primary");
+    let demURL = NSURL(string:"http://elections.huffingtonpost.com/pollster/api/charts/2016-national-democratic-primary");
     
-    var gopLeader: String
-    var demLeader: String
-    var gopPercentage: Double
-    var demPercentage: Double
+    var gopLeader: String;
+    var demLeader: String;
+    var gopPercentage: Double;
+    var demPercentage: Double;
     
     init () {
-        gopLeader = ""
-        demLeader = ""
-        gopPercentage = 0
-        demPercentage = 0
+        gopLeader = "";
+        demLeader = "";
+        gopPercentage = 0;
+        demPercentage = 0;
     }
     
         
@@ -33,24 +33,24 @@ class PollRetrieval {
             
             do
             {
-                let jsonResult: NSDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
-                let estimates: NSArray = jsonResult.valueForKey("estimates") as! NSArray
-                let firstObject: NSDictionary = estimates[0] as! NSDictionary
-                let polFirstName: NSString = firstObject.objectForKey("first_name") as! NSString
-                let polLastName: NSString = firstObject.objectForKey("last_name") as! NSString
-                let polPercentage: NSNumber = firstObject.objectForKey("value") as! NSNumber
-                let polName = (polFirstName as String) + " " + (polLastName as String)
-                self.gopLeader = polName
-                self.gopPercentage = polPercentage as Double
+                let jsonResult: NSDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary;
+                let estimates: NSArray = jsonResult.valueForKey("estimates") as! NSArray;
+                let firstObject: NSDictionary = estimates[0] as! NSDictionary;
+                let polFirstName: NSString = firstObject.objectForKey("first_name") as! NSString;
+                let polLastName: NSString = firstObject.objectForKey("last_name") as! NSString;
+                let polPercentage: NSNumber = firstObject.objectForKey("value") as! NSNumber;
+                let polName = (polFirstName as String) + " " + (polLastName as String);
+                self.gopLeader = polName;
+                self.gopPercentage = polPercentage as Double;
             } catch
             {
-                print("Oh noes! Bad things is happenin' up in here!")
+                print("Oh noes! Bad things is happenin' up in here!");
             }
         }
         
-        task.resume()
+        task.resume();
             
-        return (self.gopLeader, self.gopPercentage)
+        return (self.gopLeader, self.gopPercentage);
     }
         
     func getLatestDemResults() -> (demLaderName: String, demLeaderPercentage: Double) {

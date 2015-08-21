@@ -2,7 +2,17 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8164.2" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8135.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="HelveticaNeue.ttc">
+            <string>HelveticaNeue-Medium</string>
+            <string>HelveticaNeue-Bold</string>
+            <string>HelveticaNeue-Bold</string>
+            <string>HelveticaNeue-Medium</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -15,11 +25,122 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hWj-wV-tEk" userLabel="HelperView">
+                                <rect key="frame" x="0.0" y="302" width="600" height="4"/>
+                                <color key="backgroundColor" white="0.25103564615602847" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="4" id="wgD-Hq-c3e"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V3C-aO-pbF" userLabel="RepublcanView">
+                                <rect key="frame" x="0.0" y="306" width="600" height="294"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="% of Vote" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="dbv-zB-KEL" userLabel="% of Vote - GOP">
+                                        <rect key="frame" x="79" y="32" width="162" height="42"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="35"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Republican Leader's Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="FPR-EH-ceY" userLabel="Republican Leader's Name">
+                                        <rect key="frame" x="5" y="237" width="590" height="42"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="35"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VsP-iK-SuL" userLabel="PlaceholderGopImage">
+                                        <rect key="frame" x="382" y="25" width="210" height="147"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.18880208333333334" blue="0.12181712962962964" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="VsP-iK-SuL" firstAttribute="width" secondItem="V3C-aO-pbF" secondAttribute="width" multiplier="0.35" id="3jw-RI-lMa"/>
+                                    <constraint firstItem="VsP-iK-SuL" firstAttribute="height" secondItem="V3C-aO-pbF" secondAttribute="height" multiplier="0.5" id="A3V-4G-5jK"/>
+                                    <constraint firstItem="VsP-iK-SuL" firstAttribute="top" secondItem="V3C-aO-pbF" secondAttribute="top" constant="25" id="On3-eQ-Adi"/>
+                                    <constraint firstItem="dbv-zB-KEL" firstAttribute="centerY" secondItem="VsP-iK-SuL" secondAttribute="centerY" id="TOx-nQ-ulS"/>
+                                    <constraint firstItem="VsP-iK-SuL" firstAttribute="leading" secondItem="dbv-zB-KEL" secondAttribute="trailing" constant="3" id="Tns-HZ-W1w"/>
+                                    <constraint firstAttribute="trailing" secondItem="VsP-iK-SuL" secondAttribute="trailing" constant="8" id="ihz-wj-cVe"/>
+                                    <constraint firstAttribute="bottom" secondItem="FPR-EH-ceY" secondAttribute="bottom" constant="15" id="ioz-YG-Ek0"/>
+                                    <constraint firstItem="dbv-zB-KEL" firstAttribute="leading" secondItem="V3C-aO-pbF" secondAttribute="leading" constant="10" id="r7n-a0-IAN"/>
+                                    <constraint firstAttribute="trailing" secondItem="FPR-EH-ceY" secondAttribute="trailing" constant="5" id="rlo-5I-Lx6"/>
+                                    <constraint firstItem="FPR-EH-ceY" firstAttribute="leading" secondItem="V3C-aO-pbF" secondAttribute="leading" constant="5" id="ssH-es-xsd"/>
+                                    <constraint firstItem="dbv-zB-KEL" firstAttribute="leading" secondItem="V3C-aO-pbF" secondAttribute="leading" constant="3" id="wPn-hQ-XEI"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vKr-0R-JAh" userLabel="DemocratView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="302"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Democratic Leader's Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="FmM-2E-EeX">
+                                        <rect key="frame" x="5" y="15" width="590" height="42"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="35"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fP3-2r-CY2" userLabel="PlaceholderDemImage">
+                                        <rect key="frame" x="8" y="126" width="210" height="151"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="% of Vote" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="Eac-2g-4Ws" userLabel="% of Vote - Dem">
+                                        <rect key="frame" x="350" y="181" width="162" height="42"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="35"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="fP3-2r-CY2" firstAttribute="leading" secondItem="vKr-0R-JAh" secondAttribute="leading" constant="8" id="2s7-pF-s1i"/>
+                                    <constraint firstItem="FmM-2E-EeX" firstAttribute="leading" secondItem="vKr-0R-JAh" secondAttribute="leading" constant="5" id="4Id-BU-hL2"/>
+                                    <constraint firstItem="FmM-2E-EeX" firstAttribute="centerX" secondItem="vKr-0R-JAh" secondAttribute="centerX" id="BJi-B0-iBE"/>
+                                    <constraint firstItem="fP3-2r-CY2" firstAttribute="height" secondItem="vKr-0R-JAh" secondAttribute="height" multiplier="0.5" id="Ehi-gD-P4y"/>
+                                    <constraint firstAttribute="trailing" secondItem="Eac-2g-4Ws" secondAttribute="trailing" constant="10" id="L6U-cD-3XS"/>
+                                    <constraint firstItem="Eac-2g-4Ws" firstAttribute="leading" secondItem="fP3-2r-CY2" secondAttribute="trailing" constant="3" id="O4N-ER-B4W"/>
+                                    <constraint firstItem="Eac-2g-4Ws" firstAttribute="centerY" secondItem="fP3-2r-CY2" secondAttribute="centerY" id="Yhh-rU-Djk"/>
+                                    <constraint firstAttribute="trailing" secondItem="Eac-2g-4Ws" secondAttribute="trailing" constant="3" id="bGA-9q-r4H"/>
+                                    <constraint firstAttribute="trailing" secondItem="FmM-2E-EeX" secondAttribute="trailing" constant="5" id="dq6-GC-mE9"/>
+                                    <constraint firstAttribute="bottom" secondItem="fP3-2r-CY2" secondAttribute="bottom" constant="25" id="fvA-yT-DVd"/>
+                                    <constraint firstItem="FmM-2E-EeX" firstAttribute="top" secondItem="vKr-0R-JAh" secondAttribute="top" constant="15" id="ueX-i5-gmZ"/>
+                                    <constraint firstItem="fP3-2r-CY2" firstAttribute="width" secondItem="vKr-0R-JAh" secondAttribute="width" multiplier="0.35" id="wHJ-jF-4as"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.25" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="vKr-0R-JAh" secondAttribute="trailing" id="4yJ-SE-fXe"/>
+                            <constraint firstItem="hWj-wV-tEk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="4" id="5df-RA-SU7"/>
+                            <constraint firstAttribute="trailing" secondItem="hWj-wV-tEk" secondAttribute="trailing" id="Ah7-N9-Xll"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hWj-wV-tEk" secondAttribute="trailing" constant="-20" id="Qux-Mo-6R7"/>
+                            <constraint firstItem="hWj-wV-tEk" firstAttribute="top" secondItem="vKr-0R-JAh" secondAttribute="bottom" id="T70-V7-VVP"/>
+                            <constraint firstItem="V3C-aO-pbF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="U3P-mn-Qpj"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="V3C-aO-pbF" secondAttribute="bottom" id="UGi-Eg-hIx"/>
+                            <constraint firstItem="hWj-wV-tEk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Vr7-pD-tZm"/>
+                            <constraint firstItem="vKr-0R-JAh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Y8b-pV-mUR"/>
+                            <constraint firstItem="vKr-0R-JAh" firstAttribute="height" secondItem="hWj-wV-tEk" secondAttribute="height" constant="120" id="bSG-GG-NUb"/>
+                            <constraint firstAttribute="trailing" secondItem="V3C-aO-pbF" secondAttribute="trailing" id="fuO-VD-gsM"/>
+                            <constraint firstItem="vKr-0R-JAh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="kMK-FM-SiV"/>
+                            <constraint firstItem="hWj-wV-tEk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pQd-m1-h0I"/>
+                            <constraint firstItem="V3C-aO-pbF" firstAttribute="top" secondItem="hWj-wV-tEk" secondAttribute="bottom" id="vpI-3W-Ryr"/>
+                            <constraint firstItem="vKr-0R-JAh" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" constant="-360" id="y2Z-rE-McT"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="bSG-GG-NUb"/>
+                                <exclude reference="y2Z-rE-McT"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="demLeaderName" destination="FmM-2E-EeX" id="8IM-60-1mX"/>
+                        <outlet property="demLeaderPercent" destination="Eac-2g-4Ws" id="j0h-Mj-1gC"/>
+                        <outlet property="gopLeaderName" destination="FPR-EH-ceY" id="4vY-gR-PEO"/>
+                        <outlet property="gopLeaderPercent" destination="dbv-zB-KEL" id="zuT-ic-RWO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="324" y="317"/>
         </scene>
     </scenes>
 </document>
